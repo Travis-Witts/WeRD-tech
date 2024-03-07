@@ -1,0 +1,20 @@
+query RunInput {
+  cart {
+    lines {
+      merchandise {
+        __typename
+        ...on ProductVariant {
+          id
+          product {
+            id
+            hasAnyTag(tags: ["premium"])
+          }
+        }
+      }
+    }
+  }
+  paymentMethods {
+    id
+    name
+  }
+}
