@@ -19,13 +19,11 @@ const NO_CHANGES = {
 * @returns {FunctionRunResult}
 */
 export function run(input) {
-  // Get the cart total from the function input, and return early if it's below 100
     // Check if any item in the cart has a specific tag
     const hasSpecificTag = input.cart.lines.some(item => {
       const product = item.merchandise.product
       return product.hasAnyTag
     });
-  // const cartTotal = parseFloat(input.cart.cost.totalAmount.amount ?? "0.0")
 
   // Find the Afterpay method to hide
   const hidePaymentMethod = input.paymentMethods
